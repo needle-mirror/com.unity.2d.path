@@ -186,28 +186,37 @@ namespace UnityEditor.U2D.Path
                 onCommand = removePoints
             };
 
+            var dragged = false;
             var m_MovePointAction = new SliderAction(m_PointControl)
             {
                 enable = (guiState, action) => !IsAltDown(guiState),
                 onClick = (guiState, control) =>
                 {
+                    dragged = false;
                     var index = control.layoutData.index;
 
-                    if (!guiState.isActionKeyDown && !IsSelected(index))
-                        controller.ClearSelection();
-                    
-                    controller.SelectPoint(index, true);
-                    guiState.changed = true;
-                },
-                onSliderBegin = (guiState, control, position) =>
-                {
-                    controller.RegisterUndo("Move Point");
+                    if (!IsSelected(index))
+                    {
+                        controller.RegisterUndo("Selection");
+
+                        if (!guiState.isActionKeyDown)
+                            controller.ClearSelection();
+
+                        controller.SelectPoint(index, true);
+                        guiState.changed = true;
+                    }
                 },
                 onSliderChanged = (guiState, control, position) =>
                 {
                     var index = control.hotLayoutData.index;
                     var delta = SnapIfNeeded(position) - GetPoint(index).position;
 
+                    if (!dragged)
+                    {
+                        controller.RegisterUndo("Move Point");
+                        dragged = true;
+                    }
+                    
                     controller.MoveSelectedPoints(delta);
                 }
             };
@@ -217,13 +226,20 @@ namespace UnityEditor.U2D.Path
                 enable = (guiState, action) => !IsAltDown(guiState) && guiState.isActionKeyDown,
                 onSliderBegin = (guiState, control, position) =>
                 {
-                    controller.RegisterUndo("Move Edge");
+                    dragged = false;
+                    
                 },
                 onSliderChanged = (guiState, control, position) =>
                 {
                     var index = control.hotLayoutData.index;
                     var delta = position -  GetPoint(index).position;
                     
+                    if (!dragged)
+                    {
+                        controller.RegisterUndo("Move Edge");
+                        dragged = true;
+                    }
+
                     controller.MoveEdge(index, delta);
                 }
             };
@@ -237,7 +253,7 @@ namespace UnityEditor.U2D.Path
                 enable = (guiState, action) => !IsAltDown(guiState),
                 onSliderBegin = (guiState, control, position) =>
                 {
-                    controller.RegisterUndo("Move Tangent");
+                    dragged = false;
                     var point = GetPoint(control.hotLayoutData.index);
                     cachedRightTangent = point.rightTangent;
                     cachedTangentMode = point.tangentMode;
@@ -246,6 +262,12 @@ namespace UnityEditor.U2D.Path
                 {
                     var index = control.hotLayoutData.index;
                     var setToLinear = m_PointControl.distance(guiState, index) <= DefaultControl.kPickDistance;
+
+                    if (!dragged)
+                    {
+                        controller.RegisterUndo("Move Tangent");
+                        dragged = true;
+                    }
 
                     controller.SetLeftTangent(index, position, setToLinear, guiState.isShiftDown, cachedRightTangent, cachedTangentMode);
                     
@@ -257,7 +279,7 @@ namespace UnityEditor.U2D.Path
                 enable = (guiState, action) => !IsAltDown(guiState),
                 onSliderBegin = (guiState, control, position) =>
                 {
-                    controller.RegisterUndo("Move Tangent");
+                    dragged = false;
                     var point = GetPoint(control.hotLayoutData.index);
                     cachedLeftTangent = point.leftTangent;
                     cachedTangentMode = point.tangentMode;
@@ -266,6 +288,12 @@ namespace UnityEditor.U2D.Path
                 {
                     var index = control.hotLayoutData.index;
                     var setToLinear = m_PointControl.distance(guiState, index) <= DefaultControl.kPickDistance;
+
+                    if (!dragged)
+                    {
+                        controller.RegisterUndo("Move Tangent");
+                        dragged = true;
+                    }
 
                     controller.SetRightTangent(index, position, setToLinear, guiState.isShiftDown, cachedLeftTangent, cachedTangentMode);
                 }
