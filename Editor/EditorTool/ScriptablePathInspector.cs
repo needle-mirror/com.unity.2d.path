@@ -23,7 +23,7 @@ namespace UnityEditor.U2D.Path
 
             private static GUIContent IconContent(string name, string tooltip = null)
             {
-                return new GUIContent(Resources.Load<Texture>(name), tooltip);
+                return new GUIContent(AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/" + name + ".png"), tooltip);
             }
 
             private static GUIContent IconContent(string personal, string pro, string tooltip)

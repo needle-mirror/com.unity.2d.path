@@ -1,6 +1,6 @@
 {
   "name": "com.unity.2d.path",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "unity": "2019.3",
   "unityRelease": "0a10",
   "displayName": "2D Path",
@@ -11,11 +11,11 @@
     "path"
   ],
   "relatedPackages": {
-    "com.unity.2d.path.tests": "2.0.2"
+    "com.unity.2d.path.tests": "2.0.3"
   },
   "repository": {
     "type": "git",
     "url": "git@github.cds.internal.unity3d.com:unity/2d.git",
-    "revision": "4119d66437811a18e6b884479b21e365529bfdf1"
+    "revision": "c07a78a00db08bc4c26e880ab335730a145a096e"
   }
 }

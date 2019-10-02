@@ -16,7 +16,7 @@ namespace UnityEditor.U2D.Path
 
         internal static GUIContent IconContent(string name, string tooltip = null)
         {
-            return new GUIContent(Resources.Load<Texture>(name), tooltip);
+            return new GUIContent(AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/" + name + ".png"), tooltip);
         }
 
         public static GUIContent icon

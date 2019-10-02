@@ -18,18 +18,18 @@ namespace UnityEditor.U2D.Path
 
             public Styles()
             {
-                var pointNormal = Resources.Load<Texture2D>("Path/pointNormal");
-                var pointHovered = Resources.Load<Texture2D>("Path/pointHovered");
-                var pointSelected = Resources.Load<Texture2D>("Path/pointSelected");
-                var pointPreview = Resources.Load<Texture2D>("Path/pointPreview");
-                var tangentNormal = Resources.Load<Texture2D>("Path/tangentNormal");
+                var pointNormal = AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/Path/pointNormal.png");
+                var pointHovered = AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/Path/pointHovered.png");
+                var pointSelected = AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/Path/pointSelected.png");
+                var pointPreview = AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/Path/pointPreview.png");
+                var tangentNormal = AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/Path/tangentNormal.png");
 
-                pointNormalStyle = CreateStyle(Resources.Load<Texture2D>("Path/pointNormal"), Vector2.one * 12f);
-                pointHoveredStyle = CreateStyle(Resources.Load<Texture2D>("Path/pointHovered"), Vector2.one * 12f);
-                pointSelectedStyle = CreateStyle(Resources.Load<Texture2D>("Path/pointSelected"), Vector2.one * 12f);
-                pointPreviewStyle = CreateStyle(Resources.Load<Texture2D>("Path/pointPreview"), Vector2.one * 12f);
-                tangentNormalStyle = CreateStyle(Resources.Load<Texture2D>("Path/tangentNormal"), Vector2.one * 8f);
-                tangentHoveredStyle = CreateStyle(Resources.Load<Texture2D>("Path/pointHovered"), Vector2.one * 10f);
+                pointNormalStyle = CreateStyle(AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/Path/pointNormal.png"), Vector2.one * 12f);
+                pointHoveredStyle = CreateStyle(AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/Path/pointHovered.png"), Vector2.one * 12f);
+                pointSelectedStyle = CreateStyle(AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/Path/pointSelected.png"), Vector2.one * 12f);
+                pointPreviewStyle = CreateStyle(AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/Path/pointPreview.png"), Vector2.one * 12f);
+                tangentNormalStyle = CreateStyle(AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/Path/tangentNormal.png"), Vector2.one * 8f);
+                tangentHoveredStyle = CreateStyle(AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.unity.2d.path/Editor/Handles/Path/pointHovered.png"), Vector2.one * 10f);
             }
 
             private GUIStyle CreateStyle(Texture2D texture, Vector2 size)
