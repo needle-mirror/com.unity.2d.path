@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.0.1] - 2020-04-20
+### Changed
+- Added return for Path tool usage change.
+
 ## [3.0.0] - 2019-11-06
 ### Changed
 - Update version number for Unity 2020.1
