@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.5] - 2020-05-08
+### Changed
+- Added return for Path tool usage change.
+
 ## [2.0.4] - 2019-10-27
 ### Fixed
 - Added missing meta file

@@ -1,10 +1,8 @@
 {
     "name": "Unity.2D.Path.Tests",
     "references": [
-        "Unity.2D.Path.Editor"
-    ],
-	"optionalUnityReferences": [
-        "TestAssemblies"
+        "Unity.2D.Path.Editor",
+        "UnityEditor.TestRunner"
     ],
     "includePlatforms": [
         "Editor"
@@ -12,8 +10,13 @@
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
     "autoReferenced": false,
-    "defineConstraints": [],
-    "versionDefines": []
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
