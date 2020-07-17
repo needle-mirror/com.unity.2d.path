@@ -8,8 +8,8 @@ namespace UnityEditor.U2D.Path
         public Vector3 Snap(Vector3 position)
         {
             return new Vector3(
-                Snap(position.x, EditorPrefs.GetFloat("MoveSnapX", 1f)),
-                Snap(position.y, EditorPrefs.GetFloat("MoveSnapY", 1f)),
+                Snap(position.x, EditorSnapSettings.move.x),
+                Snap(position.y, EditorSnapSettings.move.y),
                 position.z);
         }
 

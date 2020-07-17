@@ -269,6 +269,7 @@ namespace UnityEditor.U2D.Path
                         dragged = true;
                     }
 
+                    position = SnapIfNeeded(position);
                     controller.SetLeftTangent(index, position, setToLinear, guiState.isShiftDown, cachedRightTangent, cachedTangentMode);
                     
                 }
@@ -295,6 +296,7 @@ namespace UnityEditor.U2D.Path
                         dragged = true;
                     }
 
+                    position = SnapIfNeeded(position);
                     controller.SetRightTangent(index, position, setToLinear, guiState.isShiftDown, cachedLeftTangent, cachedTangentMode);
                 }
             };

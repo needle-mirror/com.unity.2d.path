@@ -1,4 +1,7 @@
 # Changelog
+## [2.0.6] - 2020-07-17
+### Changed
+- Snapping Control Points and Tangents use Global Move Snap settings.
 
 ## [2.0.5] - 2020-05-08
 ### Changed
