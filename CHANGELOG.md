@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.0.1] - 2020-07-17
+### Changed
+- Snapping Control Points and Tangents use Global Move Snap settings.
+
 ## [4.0.0] - 2020-05-11
 ### Changed
 - Version bump for Unity 2020.2

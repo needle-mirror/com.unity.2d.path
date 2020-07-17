@@ -61,7 +61,7 @@ namespace UnityEditor.U2D.Path
 
         internal static bool IsActiveTool<T>() where T : EditorTool
         {
-            return EditorTools.EditorTools.activeToolType.Equals(typeof(T));
+            return ToolManager.activeToolType.Equals(typeof(T));
         }
 
         internal static bool IsAvailable<T>() where T : EditorTool
@@ -89,7 +89,7 @@ namespace UnityEditor.U2D.Path
         {
             foreach (var tool in m_Tools)
             {
-                if (tool.IsAvailable() && EditorTools.EditorTools.IsActiveTool(tool as EditorTool))
+                if (tool.IsAvailable() && ToolManager.IsActiveTool(tool as EditorTool))
                     tool.DuringSceneGui(sceneView);
             }
         }
@@ -167,20 +167,20 @@ namespace UnityEditor.U2D.Path
             SetupRectSelector();
             HandleActivation();
             
-            EditorTools.EditorTools.activeToolChanged += HandleActivation;
+            ToolManager.activeToolChanged += HandleActivation;
         }
 
         private void OnDestroy()
         {
             EditorToolManager.Remove(this);
 
-            EditorTools.EditorTools.activeToolChanged -= HandleActivation;
+            ToolManager.activeToolChanged -= HandleActivation;
             UnregisterCallbacks();
         }
 
         private void HandleActivation()
         {
-            if (m_IsActive == false && EditorTools.EditorTools.IsActiveTool(this))
+            if (m_IsActive == false && ToolManager.IsActiveTool(this))
                 Activate();
             else if (m_IsActive)
                 Deactivate();
