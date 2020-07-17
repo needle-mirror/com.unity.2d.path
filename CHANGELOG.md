@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.0.2] - 2020-07-17
+### Changed
+- Snapping Control Points and Tangents use Global Move Snap settings.
+
 ## [3.0.1] - 2020-04-20
 ### Changed
 - Added return for Path tool usage change.

@@ -1,6 +1,6 @@
 {
   "name": "com.unity.2d.path",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "unity": "2020.1",
   "unityRelease": "0a10",
   "displayName": "2D Path",
@@ -11,14 +11,14 @@
     "path"
   ],
   "relatedPackages": {
-    "com.unity.2d.path.tests": "3.0.1"
+    "com.unity.2d.path.tests": "3.0.2"
   },
   "upmCi": {
-    "footprint": "6a728bf7bfc93d92406d8f440e814dc5ed014f0b"
+    "footprint": "f495d19de5b802a4eb758e6599a8bda40567f65e"
   },
   "repository": {
-    "type": "git",
     "url": "https://github.cds.internal.unity3d.com/unity/2d.git",
-    "revision": "43ebcd28b387c0a52efed484cb7d9242b9d7cf6f"
+    "type": "git",
+    "revision": "770e07a3b7a9107798c367cae274d1d3418c4ede"
   }
 }
