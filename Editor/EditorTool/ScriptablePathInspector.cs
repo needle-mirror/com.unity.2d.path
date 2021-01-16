@@ -163,9 +163,17 @@ namespace UnityEditor.U2D.Path
         {
             var first = true;
             position = Vector3.zero;
+            
+            var activeObject = Selection.activeObject as GameObject;
+            if (Selection.count > 1 || !activeObject)
+                return true;
 
             foreach(var path in paths)
             {
+                MonoBehaviour behavior = path.owner as MonoBehaviour;
+                if (!behavior || activeObject != behavior.gameObject)
+                    continue;
+                
                 var selection = path.selection;
                 var matrix = path.localToWorldMatrix;
 

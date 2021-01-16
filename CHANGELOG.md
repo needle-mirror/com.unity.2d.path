@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.0.0-pre.2] - 2021-01-16
+### Changed
+- Update license
+
+### Fixed
+- 1281920 Fixed case where vertices stay selected when switching between multiple SpriteShape objects while in Edit mode.
+
 ## [5.0.0-pre.1] - 2020-10-30
 ### Changed
 - Version bump for Unity 2021.1

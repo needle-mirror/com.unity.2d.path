@@ -1,3 +1,5 @@
 # Introduction
 
-2D Path provides a set of tools to edit polygons and b-splines in custom EditorWindow and the SceneView.
+This package provides common code functionality to edit 2D polygonal shapes and B-splines in custom ``EditorWindow`` and ``SceneView``. 
+
+The package is currently for internal use only, and not meant for public use at this time.

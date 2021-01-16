@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace UnityEditor.U2D.Path.GUIFramework
 {
+    /// <summary>
+    /// Represents a system of GUI elements and controls.
+    /// </summary>
     public class GUISystem
     {
         private readonly int kControlIDCheckHashCode = "ControlIDCheckHashCode".GetHashCode();
@@ -16,11 +19,19 @@ namespace UnityEditor.U2D.Path.GUIFramework
         private LayoutData m_PrevNearestLayoutData = LayoutData.zero;
         private int m_ControlIDCheck = -1;
 
+        /// <summary>
+        /// Initializes and returns an instance of GUISystem
+        /// </summary>
+        /// <param name="guiState">The current state of the custom editor.</param>
         public GUISystem(IGUIState guiState)
         {
             m_GUIState = guiState;
         }
 
+        /// <summary>
+        /// Adds a control to the internal list of controls.
+        /// </summary>
+        /// <param name="control">The control to add.</param>
         public void AddControl(Control control)
         {
             if (control == null)
@@ -29,11 +40,19 @@ namespace UnityEditor.U2D.Path.GUIFramework
             m_Controls.Add(control);
         }
 
+        /// <summary>
+        /// Removes a control from the internal list of controls.
+        /// </summary>
+        /// <param name="control">The control to remove.</param>
         public void RemoveControl(Control control)
         {
             m_Controls.Remove(control);
         }
 
+        /// <summary>
+        /// Adds an action to the internal list of actions.
+        /// </summary>
+        /// <param name="action">The action to add.</param>
         public void AddAction(GUIAction action)
         {
             if (action == null)
@@ -42,11 +61,18 @@ namespace UnityEditor.U2D.Path.GUIFramework
             m_Actions.Add(action);
         }
 
+        /// <summary>
+        /// Removes an action from the internal list of actions.
+        /// </summary>
+        /// <param name="action">The action to remove.</param>
         public void RemoveAction(GUIAction action)
         {
             m_Actions.Remove(action);
         }
 
+        /// <summary>
+        /// Calls the methods in its invocation list when Unity draws this GUISystems's GUI.
+        /// </summary>
         public void OnGUI()
         {
             var controlIDCheck = m_GUIState.GetControlID(kControlIDCheckHashCode, FocusType.Passive);
@@ -55,7 +81,7 @@ namespace UnityEditor.U2D.Path.GUIFramework
                 m_ControlIDCheck = controlIDCheck;
             else if (m_GUIState.eventType != EventType.Used && m_ControlIDCheck != controlIDCheck)
                 Debug.LogWarning("GetControlID at event " + m_GUIState.eventType + " returns a controlID different from the one in Layout event");
-                
+
             var nearestLayoutData = LayoutData.zero;
 
             foreach (var control in m_Controls)
@@ -116,6 +142,10 @@ namespace UnityEditor.U2D.Path.GUIFramework
                 m_GUIState.Repaint();
         }
 
+        /// <summary>
+        /// Calls the methods in its invocation list when the mouse moves.
+        /// </summary>
+        /// <returns>Returns `true` if the mouse moved. Otherwise, returns `false`.</returns>
         private bool IsMouseMoveEvent()
         {
             return m_GUIState.eventType == EventType.MouseMove || m_GUIState.eventType == EventType.MouseDrag;

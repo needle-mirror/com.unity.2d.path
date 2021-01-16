@@ -1,6 +1,6 @@
 {
   "name": "com.unity.2d.path",
-  "version": "5.0.0-pre.1",
+  "version": "5.0.0-pre.2",
   "unity": "2021.1",
   "displayName": "2D Path",
   "description": "2D Path provides tooling to edit shapes (polygons and Bézier splines) in EditorWindows and the SceneView.",
@@ -10,14 +10,14 @@
     "path"
   ],
   "relatedPackages": {
-    "com.unity.2d.path.tests": "5.0.0-pre.1"
+    "com.unity.2d.path.tests": "5.0.0-pre.2"
   },
   "upmCi": {
-    "footprint": "1b93c5594b69fda4c5e3d77876523581c9532409"
+    "footprint": "de3a4f9e213a3a0a209a487b9642d0d349a2d7cd"
   },
   "repository": {
     "url": "https://github.cds.internal.unity3d.com/unity/2d.git",
     "type": "git",
-    "revision": "1f226d3f1c5c51421216a52396fba954b8b239de"
+    "revision": "4ed7487d2d09e34d26a4d99858de47575531e5a9"
   }
 }
