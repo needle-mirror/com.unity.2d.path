@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.0.2] - 2021-07-23
+### Fixed
+- 1349675 Fix case where all open Scenes were dirtied when editing a SpriteShape Spline.
+
 ## [4.0.1] - 2020-07-17
 ### Changed
 - Snapping Control Points and Tangents use Global Move Snap settings.
