@@ -333,6 +333,7 @@ namespace UnityEditor.U2D.Path
             if (path == null)
             {
                 path = ScriptableObject.CreateInstance<T>();
+                path.hideFlags = HideFlags.HideAndDontSave;
                 path.owner = targetObject;
                 m_Paths[targetObject] = path;
             }
