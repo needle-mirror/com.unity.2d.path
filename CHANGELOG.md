@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.0.1] - 2021-08-10
+### Fixed
+- 1349674 Fix case where all open Scenes were dirtied when editing a SpriteShape Spline.
+
 ## [5.0.0] - 2021-03-17
 ### Changed
 - Update version for release
