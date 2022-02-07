@@ -83,6 +83,11 @@ namespace UnityEditor.U2D.Path
         {
             get { return m_ControlPoints.Count; }
         }
+        
+        internal ControlPoint GetPointLocal(int index)
+        {
+            return m_ControlPoints[index];
+        }        
 
         public ControlPoint GetPoint(int index)
         {

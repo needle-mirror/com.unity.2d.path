@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.0.2] - 2022-02-07
+### Fixed
+- 1384287 Fixed case where Control point selection flickers when drag and multi-select points in scene
+
 ## [5.0.1] - 2021-08-10
 ### Fixed
 - 1349674 Fix case where all open Scenes were dirtied when editing a SpriteShape Spline.

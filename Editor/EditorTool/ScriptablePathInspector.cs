@@ -175,13 +175,10 @@ namespace UnityEditor.U2D.Path
                     continue;
                 
                 var selection = path.selection;
-                var matrix = path.localToWorldMatrix;
-
-                path.localToWorldMatrix = Matrix4x4.identity;
 
                 foreach (var index in selection.elements)
                 {
-                    var controlPoint = path.GetPoint(index);
+                    var controlPoint = path.GetPointLocal(index);
 
                     if (first)
                     {
@@ -193,8 +190,7 @@ namespace UnityEditor.U2D.Path
                         return true;
                     }
                 }
-
-                path.localToWorldMatrix = matrix;
+                
             }
             
             return false;
